@@ -7,7 +7,10 @@ include_once ('db_connect.php');
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$user_query = mysql_query("SELECT * FROM users WHERE username LIKE '$username' AND password LIKE '$password' LIMIT 1") or die (mysql_error());
+$hashedPassword = md5($password);
+
+
+$user_query = mysql_query("SELECT * FROM users WHERE username LIKE '$username' AND password LIKE '$hashedPassword' LIMIT 1") or die (mysql_error());
 
 ?>
 
