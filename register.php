@@ -1,18 +1,27 @@
 <? include_once ('comp/head_no_auth.php'); ?>
 <? include_once ('comp/header.php'); ?>
+<? 
+if(!empty($_GET['fail'])) {
+	echo '
+	<script type="text/javascript">
+		$(document).ready(function() {
+			alert("Username bereits vergeben!");
+		});
+	</script>';
+}
+?>
+
+
   <div class="container" style="padding-top: 60px;">
 	<div class="row large-bot">
 		<div class="grid-100 tece"><object data="img/title.svg" style="max-width: 220px;"></object></div>
 	</div>
- <?
-if(!empty($_GET['login'])){
-	echo '
-	<div class="row">
-		<div class="grid-100 tece">Login fehlgeschlagen!</div>
-	</div>';
-}
-?>
-   <form method="post" action="script/login.php">
+	<div class="row larg-bot">
+		<div class="grid-100 tece">
+			<h1>Neuer User</h1>
+		</div>
+	</div>
+   <form method="post" action="script/register.php">
 		<div class="row">
 			<div class="grid-100">
 				<input name="username" placeholder="Name"/>
@@ -25,22 +34,11 @@ if(!empty($_GET['login'])){
 		</div>
 		<div class="row norm-bot">
 			<div class="grid-100 tece">
-				<button id="login-button" type="submit" class="blue-border-button" value="login"><img class="center-vert" data-center-to="login-button" src="img/weiter_blue.svg" style="max-width: 25px;" /></button>
+				<button id="login-button" type="submit" class="blue-border-button" value="registrieren"><img class="center-vert" data-center-to="login-button" src="img/weiter_blue.svg" style="max-width: 25px;" /></button>
 			</div>
 		</div>
 	</form>
-		<div class="row no-bot">
-			<div class="grid-100 tece">
-				<a href="register.php">register</a>
-			</div>
-		</div>
-		<div class="row no-bot">
-			<div class="grid-100 tece byhuangart">
-				by Huangart
-			</div>
-		</div>
 
-  </div>
 </div>
 
 <!-- Javascript -->

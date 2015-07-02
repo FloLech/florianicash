@@ -3,14 +3,13 @@
 <div id="overlayChangePassword" class="overlay">
 	<div class="container" style="padding-top: 200px;">
 		<div class="row">
-			<div class="grid-100 tece"><h1>Change Password</h1></div>
+			<div class="grid-100 tece"><h1>Passwort ändern</h1></div>
 		</div>
 		<form action="script/changePassword.php" method="POST">
 			<input type="text" value="<? echo $user_id; ?>" name="userID" hidden="true" />
 			<div class="row">
 				<div class="grid-80 marg-10 tece">
-					new Password:<br>
-					<input type="text" name="newPassword" />
+					<input type="text" name="newPassword" placeholder="neues Passwort" />
 				</div>
 			</div>
 			<div class="row large-bot">
