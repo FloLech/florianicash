@@ -145,7 +145,12 @@ select {
   height: 50px;
   border: 2px solid $blue;
   @include border-radius(3px);
+  color: $blue;
+  display: inline-block;
+  text-align: center;
+  line-height: 50px;
 }
+
 
 .green-fill-button {
   background-color: $green;
@@ -181,11 +186,7 @@ select {
 }
 
 #overlayChangePassword {
-  input {
-    background-color: white;
-    border: 2px $blue solid;
-    color: $blue;
-  }
+
 }
 
 

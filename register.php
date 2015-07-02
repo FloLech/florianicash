@@ -21,7 +21,7 @@ if(!empty($_GET['fail'])) {
 			<h1>Neuer User</h1>
 		</div>
 	</div>
-   <form method="post" action="script/register.php">
+   <form method="post" action="script/register.php" enctype="multipart/form-data">
 		<div class="row">
 			<div class="grid-100">
 				<input name="username" placeholder="Name"/>
@@ -30,6 +30,12 @@ if(!empty($_GET['fail'])) {
 		<div class="row">
 			<div class="grid-100">
 				<input name="password" type="password" placeholder="Passwort" />
+			</div>
+		</div>
+		<div class="row large-bot">
+			<div class="grid-100 tece">
+				<input type="file" name="userPicture" id="userPicture" hidden="true" />
+				<label for="userPicture" class="blue-border-button" style="width: 250px">Upload Picture</label>
 			</div>
 		</div>
 		<div class="row norm-bot">

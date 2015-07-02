@@ -14,10 +14,16 @@ if ($userNameExists >= 1) {
 	header ('Location: ../register.php?fail=username');
 } else {
 
+	$tmp_name = $_FILES["userPicture"]["tmp_name"];
+	$temp = explode(".",$_FILES["userPicture"]["name"]);
+	$newfilename = $username . '.' .end($temp);
+    move_uploaded_file($tmp_name, "../user-pics/$newfilename");
+    $imageLocation = 'user-pics/'.$newfilename;
+
+    mysql_query("INSERT INTO users (username, password, pic) VALUES ('$username', '$hashedPassword', '$imageLocation')");
+
 	session_start();
 
-	mysql_query("INSERT INTO users (username, password) VALUES ('$username', '$hashedPassword')");
-	
 	$user_query = mysql_query("SELECT * FROM users WHERE username LIKE '$username' AND password LIKE '$hashedPassword' LIMIT 1") or die (mysql_error());
 
 	while ($row = mysql_fetch_assoc($user_query)){
