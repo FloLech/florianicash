@@ -32,6 +32,9 @@
 			</div>
 		</form>
 		<div class="row">
+				<div class="grid-50 marg-25 tece"><a class="blue-border-button" href="myDebitors.php">Meine Debitoren</a></div>
+		</div>
+		<div class="row">
 				<div class="grid-50 marg-25 tece"><a class="blue-border-button" href="script/logout.php">Log Out</a></div>
 		</div>
 	</div>

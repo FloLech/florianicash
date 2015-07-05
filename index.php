@@ -25,7 +25,7 @@
 
 <?
 
-$user_query = mysql_query("SELECT * FROM users WHERE id NOT LIKE '$user_id'") or die (mysql_error());
+$user_query = mysql_query("SELECT users.username, users.id, users.pic FROM users JOIN debitors ON users.id = debitors.debitor WHERE debitors.creditor LIKE '$user_id' ORDER BY users.username") or die (mysql_error());
 
 while ($row = mysql_fetch_assoc($user_query)){
 	$debitor = $row['id'];

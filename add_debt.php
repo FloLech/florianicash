@@ -13,7 +13,7 @@
 			<div class="grid-100"><span class="custom-dropdown">
 				<select name="debitor[]">
 					<?
-					$user_query = mysql_query("SELECT * FROM users WHERE id NOT LIKE '$user_id'") or die (mysql_error());
+					$user_query = mysql_query("SELECT users.username, users.id FROM users JOIN debitors ON users.id = debitors.debitor WHERE debitors.creditor LIKE '$user_id' ORDER BY users.username") or die (mysql_error());
 
 					while($row = mysql_fetch_assoc($user_query)){
 						echo '<option class="custom-option" value="'.$row['id'].'">'.$row['username'].'</option>';
